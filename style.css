@@ -1,0 +1,221 @@
+/* ===============================
+   Reset
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Body
+=============================== */
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Calibri, Arial, sans-serif;
+  background: linear-gradient(180deg, #eef4fb, #dce9f7);
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   Header
+=============================== */
+header {
+  padding: 22px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+.title-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+/* ===============================
+   Main Layout
+=============================== */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* ===============================
+   Search Section
+=============================== */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Search input */
+.search-bar {
+  width: 320px;
+  max-width: 100%;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar::placeholder {
+  color: #94a3b8;
+}
+
+.search-bar:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
+}
+
+/* Search button */
+.search-btn {
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #1d4ed8;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.25);
+}
+
+.search-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.3);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   Weather Display
+=============================== */
+.display-weather {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-temperature {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 30px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ===============================
+   Loading Animation
+=============================== */
+.loader {
+  width: 52px;
+  height: 52px;
+  margin-top: 35px;
+  border: 4px solid #dbeafe;
+  border-top-color: #1d4ed8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 52px;
+  height: 52px;
+  margin-top: 35px;
+  border: 4px solid #dbeafe;
+  border-top-color: #1d4ed8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+
+  /* Hide loader when page first loads */
+  display: none;
+}
+
+.loading-text {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  animation: fade 1.2s ease-in-out infinite;
+
+  /* Hide loading text when page first loads */
+  display: none;
+}
+
+@keyframes fade {
+  50% {
+    opacity: 0.4;
+  }
+}
+@keyframes fade {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ===============================
+   Mobile Responsive
+=============================== */
+@media (max-width: 550px) {
+  header {
+    padding: 18px 20px;
+  }
+
+  .title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  main {
+    padding: 35px 16px;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search-bar,
+  .search-btn {
+    width: 100%;
+  }
+
+  .show-temperature {
+    font-size: 22px;
+    padding: 28px 20px;
+  }
+}
